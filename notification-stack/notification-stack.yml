@@ -54,9 +54,6 @@ Resources:
           SLACK_MSG_EMOJI : !Ref SlackMsgEmoji
       Code:
         ZipFile: !Sub |
-          # Lambda function to dump XML messages from Kinesis to S3
-          # DO NOT EDIT THIS FUNCTION IN THE CONSOLE.
-          # YOU MUST UPDATE THE CLOUDFORMATION AND UPDATE THE STACK INSTEAD
           import json
           import shlex
           import urllib2

@@ -31,9 +31,6 @@ SNS_PROPERTIES_FOR_SLACK = [
     'StackName'
 ]
 
-# SLACK_CHANNEL = "#test-notifications"
-# HOOK_URL = "https://hooks.slack.com/services/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"
-
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
@@ -44,7 +41,7 @@ SLACK_MSG_EMOJI = os.environ['SLACK_MSG_EMOJI']
 SLACK_WEB_HOOK_URL = os.environ['SLACK_WEB_HOOK_URL']
 
 
-def lambda_handler(event, context):
+def handler(event, context):
 
     # records = event['Records']
     # first_record = records[0]
@@ -60,13 +57,8 @@ def lambda_handler(event, context):
         return
 
     message_to_slack = get_message_for_slack(cfn_msg_dict)
-    logger.info()
     data = json.dumps(message_to_slack)
-    req = urllib2.Request(
-        SLACK_WEB_HOOK_URL,
-        data,
-        {'Content-Type': 'application/json'}
-    )
+    req = urllib2.Request(SLACK_WEB_HOOK_URL, data, {'Content-Type': 'application/json'})
     urllib2.urlopen(req)
 
     return {'message': 'Notified'}
