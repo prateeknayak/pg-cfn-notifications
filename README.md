@@ -12,6 +12,7 @@ teams to be located across continents and act as one big team.
 
 In this pg repo, we aim to combine these two powerful tools used by modern-age developers.
 
+**NOTE**: There already exist some prior-art of doing all of this.
 
 ## How do we do it ?
 
