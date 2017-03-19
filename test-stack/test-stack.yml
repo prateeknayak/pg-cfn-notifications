@@ -1,0 +1,13 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: "Test cfn stack"
+Resources:
+  TestNotificationSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Some dummy shenanigans.
+      SecurityGroupIngress:
+      - CidrIp: 0.0.0.0/0
+        FromPort: '22'
+        IpProtocol: tcp
+        ToPort: '22'
+        
