@@ -45,7 +45,7 @@ This stack called notification-stack creates:
 
 
 ```commandline
-aws cloudformation create-stack --stack-name notification-stack --template-body file://notification-stack/notification-stack.yml --parameters  ParameterKey=SlackWebHookUrl,ParameterValue=<ENTER YOUR SLACK WEB HOOL URL HERE> ParameterKey=LambdaCFNRole,ParameterValue=<ENTER YOUR IAM ROLE FOR LAMBDA HERE>
+aws cloudformation create-stack --stack-name notification-stack --template-body file://cfn/notification-stack/notification-stack.yml --parameters  ParameterKey=SlackWebHookUrl,ParameterValue=<ENTER YOUR SLACK WEB HOOL URL HERE> ParameterKey=LambdaCFNRole,ParameterValue=<ENTER YOUR IAM ROLE FOR LAMBDA HERE>
 
 ```
 
@@ -54,7 +54,7 @@ aws cloudformation create-stack --stack-name notification-stack --template-body 
 1. Stand up the test-notification
 
 ```commandline
-aws cloudformation create-stack --stack-name test-notification-stack --template-body file://test-stack/test-stack.yml --notification-arns <SNS TOPIC ARN>
+aws cloudformation create-stack --stack-name test-notification-stack --template-body file://cfn/test-stack/test-stack.yml --notification-arns <SNS TOPIC ARN>
 ```
 
 TODO:
